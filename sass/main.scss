@@ -1,0 +1,580 @@
+/*Variables*/
+
+$Policesite: 'Roboto', sans-serif;
+$Policestitre: 'Shrikhand', cursive;
+$blanc : white;
+$couleurprimaire : #9356DC;
+
+
+/*Règles répétables*/
+
+.container {
+    padding: 10px;
+    @media (min-width: 737px) {
+    }
+}
+
+.symbole {
+    padding-right: 20px
+}
+/*----------- 
+Media Queries 
+-----------*/
+
+/* Desktop */
+
+
+
+/*Loader*/
+
+.loaderconfig {
+    display: flex;
+    position: fixed; 	
+    background-color: #fffffff4;
+    z-index: 100;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    animation: hideAnimation 0s linear 0.1s;
+    animation-fill-mode: forwards;
+
+    &__loader {
+        width: 130px;
+        height: 130px;
+        display: inline-block;
+        position: relative;
+    }
+
+    &__quart {
+        border-radius: 100px;
+        border: 6px solid transparent;
+        border-top-color: #9256dc;
+        animation:spin 2.5s ease-out infinite;
+        ;
+        
+        &::after {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            bottom: 5px;
+            right: 5px;
+            border-radius: 100px;
+            border: 6px solid transparent;
+            border-top-color: #ff79d9;
+            animation:spin 2.5s ease-in infinite;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            bottom: 15px;
+            right: 15px;
+            border-radius: 100px;
+            border: 6px solid transparent;
+            border-top-color: #99e2d0;
+            animation:spin 2.5s ease-out infinite;
+        }
+    }
+}
+@keyframes spin {
+    0%{ transform: rotate(0deg);}
+    100%{ transform: rotate(360deg);}
+}
+@keyframes hideAnimation {
+    to {
+      visibility: hidden;
+      width: 0;
+      height: 0;
+    }
+}
+
+@keyframes arrive {
+    0% {
+        transform: translateY(1vh);
+        opacity: 0;
+        visibility: hidden;
+    }
+    100% {
+        transform: translateY(0vh);
+        opacity: 1;
+    }
+}
+
+/* Tete de page général commune à tous les sites */
+
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+* {
+    font-family: $Policesite;
+    text-decoration: none;
+    border-style: none;
+
+  }
+
+.titre {
+    box-shadow: 0px 3px 20px 2px rgba(0, 0, 0, 0.15);
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 15px 0px;
+
+    &__texte {
+        display: flex;
+        font-family: $Policestitre;
+        width: 100%;
+        height: auto;
+        font-size: 2rem;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+    }
+
+/*Sur les pages des menus*/
+    &__fleche {
+        display: flex;
+        color: black;
+        font-size: 21px;
+        padding-left: 20px;
+        justify-content: flex-start;    
+    }
+}
+.imageresto {
+        overflow: hidden;
+        height: 270px;
+        &__img {
+            object-fit: cover;
+            width: 110%;
+    }
+}
+
+
+
+/*Sur la page principal*/
+
+.location {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(128, 128, 128, 0.211);
+    padding: 0px;
+
+    &__texte {
+        font-weight: 600;
+    }
+}
+
+.reserve {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px 70px 20px;
+    background-color: rgba(128, 128, 128, 0.055);
+    &__texte {
+        text-align: center;
+        margin: 5px auto;
+        &--titre {
+        margin: 0 20px;
+        }
+    }
+
+    &__button {
+        color: $blanc;
+        background-color: $couleurprimaire;
+        margin-top: 20px;
+        padding: 18px 20px;
+        border-radius: 30px;
+        box-shadow: 0px 6px 10px 2px rgba(28, 28, 28, 0.229);
+        z-index: 0;
+        position: relative;
+        &:hover {
+            &::after {
+                opacity: 1;
+            }
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;  
+            left: 0;
+            background-color: lighten($couleurprimaire, 5);
+            box-shadow: 0px 6px 10px 2px rgba(28, 28, 28, 0.229);
+            border-radius: 30px;
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 250ms;
+        }
+
+    }
+}
+
+/* Navigation de la page principal */
+.fonctionnement {
+    color: black;
+    &__titre {
+        display: flex;
+        padding-left: 15px;
+        @media (min-width: 750px) {
+            padding: 0;
+            align-items: center;
+            justify-content: center;
+        }
+
+    }
+
+    &__liste {
+        display: flex;
+        flex-direction: column;
+        width: 95%;
+        padding: 5px 0px;
+        padding-left: 18px;
+        @media (min-width: 750px) {
+            width: 100%;
+            padding: 0;
+            justify-content: center;
+            flex-direction: row;
+        }
+    }
+
+    &__element {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        border-radius: 20px;                
+        box-shadow: 0px 3px 15px 5px rgba(177, 165, 165, 0.256);
+        width: 90%;
+        max-width: 350px;
+        margin: 25px 0px;
+        background-color: rgba(128, 128, 128, 0.055);
+        padding-left: 15px;
+        @media (min-width: 750px) {
+            margin: 20px 20px;
+            width: 30%;
+        }
+    }
+
+    &__chiffre {
+        display: flex;
+        justify-content: center;
+        color: white;
+        background-color: blue;
+        padding: 5px 5px;
+        border-radius: 50%;
+        font-size: 12px;
+        height: 14px;
+        width: 14px;
+        margin-left: -25px;
+    }
+
+    &__texte {
+        display: flex;
+        align-items: center;
+        padding: 5px 20px;
+    }
+}
+
+/* Main du premier site */
+.restaunav {
+    background-color: rgba(211, 211, 211, 0.671);
+    width: 100%;
+    padding: 20px 0 40px 0;
+
+    &__container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        @media (min-width: 737px) {
+            flex-direction: row;
+            padding: 10px 0;
+        }
+    }
+
+    &__titre {
+        display: flex;
+        padding-top: 20px;
+        padding-left: 20px;
+        @media (min-width: 737px) {
+            padding-left: 15%;
+            padding-top: 40px;
+        }
+
+    }
+ 
+    }
+.restaucard {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    margin: 10px 15px;
+    width: 92%;
+    min-width: 30%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 15px;
+    display: inline-block;
+    text-decoration: none;
+    @media (min-width: 737px) {
+        width: 35%;
+        height: 320px;
+    }
+        
+    &__image {
+        width: 100%;
+        height: 70%;
+        object-fit: cover;
+    }
+
+    &__paragraphe {
+        display: flex;   
+    }    
+  
+    &__texte {
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        padding: 0px 10px;
+        color: black;     
+        
+        &--gras {
+            padding-top: 5px;
+            margin: 5px;
+        }
+
+        &--normal {
+            margin: 5px;
+        }
+    }
+        
+    &__coeurvide {
+        display: inline-block;
+        display: flex;
+        padding: 20px 30px 5px 5px;
+        color: black;
+        font-size: 23px;
+        font-weight: 100;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        opacity: 1;
+        transition: transform 350ms ease-in-out;
+        &:hover {
+            transform: scale(1.15);
+            color: blue;
+            & .restaucard__coeurplein {
+                opacity: 1;
+            }
+        } 
+    }
+
+    &__coeurplein {
+        position: absolute;
+        display: inline-block;
+        color: blue;
+        font-size: 23px;
+        font-weight: 100;
+        position: absolute;
+        opacity: 0;
+        z-index: -1;
+        transition: opacity 250ms;
+    }
+
+}
+   
+.piedpage {
+    color: white;
+    background-color: rgb(60, 55, 55);
+    padding: 20px 0 2px 20px;
+    margin: 0;
+    padding-bottom: 20px;
+    @media (min-width: 737px) {
+        padding-left: 50px;
+    }
+    &__titre {
+        font-family: $Policestitre;
+        font-size: 20px;
+    }
+
+    &__nav {
+        display: flex;
+        flex-direction: column;
+        width: 100%;  
+        @media (min-width: 737px) {
+            flex-direction: row;
+        }
+   
+        a {
+            margin: 7px 0;
+            text-decoration: none;
+            color: white;
+            &:hover {
+                border-left: 2px solid white;
+            }
+            @media (min-width: 737px) {
+                padding: 0 50px 0 2px;
+            }
+        } 
+    }
+      
+    &__symbtxt {
+        display: flex;
+        align-items: center;
+
+        &--symbole {
+            padding-right: 10px ;
+            font-size: 12px;
+        }
+
+        a {
+            margin: 5px 0;
+        }
+    }
+}
+
+/* Page des menus */
+
+
+.titreresto {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 30px 0 30px;
+    border: 10px;
+    border-radius: 25px;
+    &__nom {
+        font-family: $Policestitre;
+        margin-top: 35px;
+    }
+    @media (min-width: 915px){
+        justify-content: center;
+        margin-bottom: 40px;
+        &__nom {
+            margin-right: 5%;
+        }
+    }
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    @media (min-width: 977px){
+        flex-direction: row;
+        width: 92%;
+        align-items: center;
+        margin: auto;
+    }
+}
+.nometplat1, .nometplat2, .nometplat3 {  
+
+    @media (min-width: 977px){
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      
+    }
+}
+.ordremenu {
+    display: flex;
+    flex-direction: column;
+    &__titre{
+        margin: 0;
+        font-weight: 100;
+        font-size: 18px;
+        text-transform: uppercase;
+    }
+    &__souligne{
+        width: 60px;
+        height: 3px;
+        background-color: rgba(111, 117, 106, 0.308);
+    }
+    @media (min-width: 977px){
+        padding-left: 10px;
+    }
+}
+.nometplat1 {
+    animation: arrive 0.5s ease-in-out;
+}
+.nometplat2 {
+    animation: arrive 1.5s ease-in-out;
+}
+.nometplat3 {
+    animation: arrive 2s ease-in-out;
+}
+.plat {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 20px;                
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0px 3px 15px 5px rgba(177, 165, 165, 0.256);
+    margin: 25px 0px;
+    background-color: rgba(128, 128, 128, 0.055);
+    padding-left: 15px;
+    font-size: 15px;
+    @media (min-width: 977px){
+        width: 70%;
+    }
+
+    &__anim1 {
+        animation: arrive 1.5s ease-in-out;
+    }
+
+    &__anim2 {
+        animation: arrive 1.5s ease-in-out;
+    }
+
+    &__anim3 {
+        animation: arrive 1.5s ease-in-out;
+    }
+    
+    &__anim4 {
+        animation: arrive 1.5s ease-in-out;
+    }
+
+    &__texte {
+        display: flex;
+        flex-direction: column;
+        margin: 5px 0;
+        width: 80%;
+
+        &--petit, &--gras {
+            margin: 3px 0;  
+            overflow: hidden;            
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        &--petit{
+            font-size: 15px;
+        }
+    }
+
+    &__prix {
+        margin: 15px 15px 0 0;
+    }
+}
+   
+.commander {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #9256dcce;
+    margin: 20px auto 50px auto;
+    padding: 0px 30px;
+    border-radius: 30px;
+    &__texte {
+        margin: 15px;
+    }
+    @media (min-width: 977px){
+        margin-top: 50px;
+    }
+}
