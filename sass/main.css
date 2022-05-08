@@ -2,6 +2,9 @@
 /*Variables*/
 /*Règles répétables*/
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+* {
+  outline: none;
+}
 .container {
   padding: 10px;
 }
