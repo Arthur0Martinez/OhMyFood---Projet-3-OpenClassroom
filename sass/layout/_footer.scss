@@ -1,0 +1,51 @@
+/* Footer présent sur toutes les pages */
+
+.piedpage {
+    color: white;
+    background-color: rgb(60, 55, 55);
+    padding: 20px 0 2px 20px;
+    margin: 0;
+    padding-bottom: 20px;
+    @media (min-width: 737px) {
+        padding-left: 50px;
+    }
+    &__titre {
+        font-family: $Policestitre;
+        font-size: 20px;
+    }
+
+    &__nav {
+        display: flex;
+        flex-direction: column;
+        width: 100%;  
+        @media (min-width: 737px) {
+            flex-direction: row;
+        }
+   
+        a {
+            margin: 7px 0;
+            text-decoration: none;
+            color: white;
+            &:hover {
+                border-left: 2px solid white;
+            }
+            @media (min-width: 737px) {
+                padding: 0 50px 0 2px;
+            }
+        } 
+    }
+      
+    &__symbtxt {
+        display: flex;
+        align-items: center;
+
+        &--symbole {
+            padding-right: 10px ;
+            font-size: 12px;
+        }
+
+        a {
+            margin: 5px 0;
+        }
+    }
+}

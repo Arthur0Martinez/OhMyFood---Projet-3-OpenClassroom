@@ -1,0 +1,196 @@
+/* Page des menus */
+
+.menu {
+    border-radius: 40px 40px 0 0;
+    margin-top: -4rem;
+    background-color: white;
+    position: relative;
+    z-index: 1;
+}
+.titreresto {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &__nom {
+        font-family: $Policestitre;
+        margin-top: 35px;
+        margin-left: 10px;
+    }
+    @media (min-width: 915px){
+        justify-content: center;
+        margin-bottom: 40px;
+        &__nom {
+            margin-right: 5%;
+        }
+    }
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    @media (min-width: 977px){
+        flex-direction: row;
+        width: 92%;
+        align-items: center;
+        margin: auto;
+    }
+}
+.nometplat1, .nometplat2, .nometplat3 {  
+
+    @media (min-width: 977px){
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      
+    }
+}
+.ordremenu {
+    display: flex;
+    flex-direction: column;
+    &__titre{
+        margin: 0;
+        font-weight: 100;
+        font-size: 18px;
+        text-transform: uppercase;
+    }
+    &__souligne{
+        width: 60px;
+        height: 3px;
+        background-color: rgba(111, 117, 106, 0.308);
+    }
+    @media (min-width: 977px){
+        padding-left: 10px;
+    }
+}
+.nometplat1 {
+    animation: arrive 0.5s ease-in-out;
+}
+.nometplat2 {
+    animation: arrive 1.5s ease-in-out;
+}
+.nometplat3 {
+    animation: arrive 2s ease-in-out;
+}
+.plat {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    border-radius: 20px;                
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0px 3px 15px 5px rgba(177, 165, 165, 0.256);
+    margin: 25px 0px;
+    padding-left: 15px;
+    font-size: 15px;
+    @media (min-width: 977px){
+        width: 70%;
+    }
+
+    &__anim1 {
+        animation: arrive 1.5s ease-in-out;
+    }
+
+    &__anim2 {
+        animation: arrive 1.5s ease-in-out;
+    }
+
+    &__anim3 {
+        animation: arrive 1.5s ease-in-out;
+    }
+    
+    &__anim4 {
+        animation: arrive 1.5s ease-in-out;
+    }
+
+    &__texte {
+        display: flex;
+        flex-direction: column;
+        margin: 5px 0;
+        width: 80%;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+
+        &--petit, &--gras {
+            margin: 3px 0;  
+            overflow: hidden;            
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        &--petit{
+            font-size: 15px;
+        }
+    }
+
+    &__prix {
+        margin: 15px 25px 0 0;
+    }
+    &__confirmation {
+        background-color: lightgreen;
+        margin: -15px -80px -15px -15px;
+        width: 80px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition-duration: 0.75s;
+    }
+    &:hover &__confirmation {
+        margin-right: -10px;
+    }
+    &__validation {
+        height: 1.6rem;
+        width: 1.6rem;
+        background-color: white;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        border-radius: 25px;
+        transform: rotate(660deg);
+        transition-duration: 0.85s;
+        &--texte {
+            color: lightgreen;
+        }
+    }
+    &:hover &__validation {
+        transform: rotate(0);
+    }
+}
+   
+.commander {
+    display: flex;
+    justify-content: center;
+    color: $blanc;
+    position: relative;
+    background-color: $couleurprimaire;
+    margin: 20px auto 50px auto;
+    box-shadow: 0px 6px 10px 2px rgba(28, 28, 28, 0.229);
+    padding: 15px 35px;
+    border-radius: 30px;
+    z-index: 0;
+    @media (min-width: 977px){
+        margin-top: 50px;
+    }        
+    &:hover {
+        &::after {
+            opacity: 1;
+        }
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;  
+        left: 0;
+        background-color: lighten($couleurprimaire, 5);
+        box-shadow: 0px 6px 10px 2px rgba(28, 28, 28, 0.229);
+        border-radius: 30px;
+        opacity: 0;
+        z-index: -1;
+        transition: opacity 250ms;
+    }
+}

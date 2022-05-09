@@ -1,3 +1,30 @@
+/*Règles répétables*/
+
+.container {
+  padding: 10px;
+  @media (min-width: 737px) {
+  }
+}
+
+.symbole {
+  padding-right: 20px
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+* {
+    font-family: $Policesite;
+    text-decoration: none;
+    border-style: none;
+
+  }
+
+/*---------------------------------------------------------------------------
+
+NORMALIZE.CSS
+
+----------------------------------------------------------------------------*/
+
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
