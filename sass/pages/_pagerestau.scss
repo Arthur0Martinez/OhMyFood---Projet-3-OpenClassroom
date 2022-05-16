@@ -57,7 +57,7 @@ article {
     &__souligne{
         width: 60px;
         height: 3px;
-        background-color: rgba(111, 117, 106, 0.308);
+        background-color: $couleurtertiaire;
     }
     @media (min-width: 977px){
         padding-left: 10px;
@@ -129,7 +129,7 @@ article {
         margin: 15px 25px 0 0;
     }
     &__confirmation {
-        background-color: lightgreen;
+        background-color: $couleurtertiaire;
         margin: -15px -80px -15px -15px;
         width: 80px;
         height: 60px;
@@ -152,7 +152,7 @@ article {
         transform: rotate(660deg);
         transition-duration: 0.85s;
         &--texte {
-            color: lightgreen;
+            color: $couleurtertiaire;
         }
     }
     &:hover &__validation {

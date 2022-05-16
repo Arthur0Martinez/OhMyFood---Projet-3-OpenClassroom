@@ -17,7 +17,7 @@
     flex-direction: column;
     align-items: center;
     padding: 40px 20px 70px 20px;
-    background-color: rgba(128, 128, 128, 0.055);
+    background-color: $fondmenu;
     &__texte {
         text-align: center;
         margin: 5px auto;
@@ -98,7 +98,7 @@
         background-color: rgba(128, 128, 128, 0.055);
         padding-left: 15px;
         &--couleur {
-            background-color: rgba(126, 68, 146, 0.139);;
+            background-color: #F5EDFF;
         }
         @media (min-width: 750px) {
             margin: 20px 20px;
@@ -110,7 +110,7 @@
         display: flex;
         justify-content: center;
         color: white;
-        background-color: blue;
+        background-color: $couleurprimaire;
         padding: 5px 5px;
         border-radius: 50%;
         font-size: 12px;
@@ -124,14 +124,14 @@
         align-items: center;
         padding: 5px 20px;
         &--couleur {
-            color: blue;
+            color: $couleurprimaire;
         }
     }
 }
 
 /* Main de la page principal */
 .restaunav {
-    background-color: rgba(211, 211, 211, 0.671);
+    background-color: $fondmenu;
     width: 100%;
     padding: 20px 0 40px 0;
 
@@ -184,13 +184,13 @@
     &__nouveau {
         position: absolute;
         border-radius: 3px;
-        background-color: lightgreen;
+        background-color: #99E2D0;
         padding: 10px 18px;
         top: 20px;
         right: 20px; 
         &--texte {
             margin: 0;
-            color: green;
+            color: #159374;
         }
 
     }
@@ -230,7 +230,7 @@
         transition: transform 350ms ease-in-out;
         &:hover {
             transform: scale(1.15);
-            color: blue;
+            color: $couleurprimaire;
             & .restaucard__coeurplein {
                 opacity: 1;
             }
@@ -239,7 +239,7 @@
 
     &__coeurplein {
         position: absolute;
-        color: blue;
+        color: $couleurprimaire;
         font-size: 23px;
         font-weight: 100;
         opacity: 0;
