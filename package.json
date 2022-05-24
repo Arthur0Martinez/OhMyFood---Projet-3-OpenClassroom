@@ -1,10 +1,10 @@
 {
-  "name": "ohmyfood",
+  "name": "ohmyfoood",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Projet 3 de la formation développeur Web OpenClassroom",
+  "main": "index.html",
   "scripts": {
-    "sass": "sass --watch ./sass/style.scss:./css/style.css"
+    "sass": "sass --watch ./sass/main.scss:./css/style.css --style compressed"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Arthur0Martinez/OhMyFood---Projet-3-OpenClassroom/issues"
   },
-  "homepage": "https://github.com/Arthur0Martinez/OhMyFood---Projet-3-OpenClassroom#readme"
+  "homepage": "https://github.com/Arthur0Martinez/OhMyFood---Projet-3-OpenClassroom#readme",
+  "devDependencies": {
+    "sass": "^1.52.1"
+  }
 }
